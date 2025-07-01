@@ -546,6 +546,8 @@
                 align-items: center;
                 justify-content: center;
                 box-sizing: border-box;
+                height: 100vh; /* 追加：画面の高さに固定 */
+                overflow-y: hidden; /* 追加：縦スクロールを無効 */
             }
 
             .hero-content {
@@ -826,6 +828,13 @@
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 targetSection.classList.add('active');
+            }
+
+            // ホーム画面の時はbodyのスクロールを無効、他は有効
+            if (sectionId === 'home') {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
             }
 
             // ナビゲーションリンクのアクティブ状態を更新

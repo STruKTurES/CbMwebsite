@@ -837,6 +837,12 @@
                 document.body.style.overflow = 'auto';
             }
 
+            // ハンバーガーメニューを閉じる
+            const navMenu = document.getElementById('nav-menu');
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+
             // ナビゲーションリンクのアクティブ状態を更新
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {

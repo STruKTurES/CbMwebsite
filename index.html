@@ -41,7 +41,15 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #fff;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            max-width: 200px;
         }
 
         .nav-menu {
@@ -66,6 +74,7 @@
             min-height: 100vh;
             padding: 80px 0 60px;
             display: none;
+            position: relative;
         }
 
         .section.active {
@@ -95,6 +104,12 @@
             justify-content: center;
             text-align: center;
             color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        #home:not(.active) {
+            display: none !important;
         }
 
         .hero-content h1 {
@@ -150,14 +165,9 @@
 
         .band-photo {
             width: 100%;
-            max-width: 400px;
-            height: 300px;
-            background: #333;
+            max-width: 500px;
+            height: auto;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
         }
 
         /* ディスコグラフィ */
@@ -205,6 +215,28 @@
             color: #999;
         }
 
+        .discography-section {
+            margin-bottom: 3rem;
+        }
+
+        .subsection-title {
+            font-size: 1.8rem;
+            color: #ff6b6b;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .album-cover-img {
+            width: 100%;
+            max-width: 180px;
+            height: 180px;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border-radius: 10px;
+        }
+
         /* メンバー */
         .members {
             background: #222;
@@ -213,7 +245,7 @@
 
         .member-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
@@ -242,6 +274,15 @@
         .member-role {
             color: #ff6b6b;
             font-weight: bold;
+        }
+
+        .member-photo-img{
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: block;
         }
 
         /* MV */
@@ -302,6 +343,52 @@
             align-items: center;
         }
 
+        .live-item-with-flyer {
+            background: #2a2a2a;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: start;  /* centerからstartに変更 */
+        }
+
+        .live-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            min-height: 200px;  /* 最小高さを設定 */
+        }
+
+        .live-ticket {
+            margin-top: auto;  /* チケットボタンを下に配置 */
+            align-self: flex-start;
+        }
+
+        .live-details {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin: 1rem 0;  /* 上下にマージンを追加 */
+            line-height: 1.4;
+            flex-grow: 1;  /* 余白を埋める */
+        }
+
+        .flyer-img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .live-item-with-flyer {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
         .live-date {
             font-size: 1.2rem;
             font-weight: bold;
@@ -315,6 +402,33 @@
         .live-city {
             color: #999;
         }
+
+        .live-details {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .ticket-link {
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .ticket-link:hover {
+            background: #ff5252;
+        }
+
+        .live-venue {
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
 
         /* コンタクト */
         .contact {
@@ -379,7 +493,9 @@
     <!-- ナビゲーション -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"> Called by Mercury</div>
+            <div class="logo">
+                <img src="images/CbMLogo_white_400p.png" alt="Called by Mercury" class="logo-img">
+            </div>
             <ul class="nav-menu">
                 <li><a href="#" class="nav-link" onclick="showSection('home')">HOME</a></li>
                 <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('about')">ABOUT</a></li>
@@ -395,7 +511,7 @@
     <!-- ホームセクション -->
     <section id="home" class="section hero active">
         <div class="hero-content">
-            <h1>Called by Mercury</h1>
+            <img src="images/CbMLogo_white_400p.png" alt="Called by Mercury" class="hero-logo">
             <p>RAVECORE, Based in Tokyo</p>
         </div>
     </section>
@@ -409,7 +525,7 @@
                     <p>レイヴとメタルの完璧な融合 私たちが足を踏み入れるすべての場所がレイヴ・アリーナとなる。 私たちのサウンドは、バンドのエネルギーとクラブ・カルチャーの真の融合であり、他では味わえない衝撃的な体験を生み出している。</p>
                 </div>
                 <div class="about-image">
-                    <div class="band-photo">バンド写真</div>
+                     <img src="images/CbMArtistPhoto_500p.png" alt="Called by Mercury バンドロゴ" class="band-photo-img">
                 </div>
             </div>
         </div>
@@ -419,50 +535,93 @@
     <section id="discography" class="section discography">
         <div class="container">
             <h2 class="section-title">Discography</h2>
-            <div class="album-grid">
-                <div class="album-card">
-                    <div class="album-cover">アルバムカバー</div>
-                    <div class="album-title">First Album</div>
-                    <div class="album-year">2023</div>
+            
+            <!-- EP Section -->
+            <div class="discography-section">
+                <h3 class="subsection-title">EP</h3>
+                <div class="album-grid">
+                    <div class="album-card">
+                        <img src="images/mercurysevenremixes.png" alt="RAVECORE -Mercury Seven- remixes" class="album-cover-img">
+                        <div class="album-title">RAVECORE -Mercury Seven- remixes</div>
+                        <div class="album-year">2024</div>
+                    </div>
+                    <div class="album-card">
+                        <img src="images/mercuryseven.png" alt="RAVECORE -Mercury Seven-" class="album-cover-img">
+                        <div class="album-title">RAVECORE -Mercury Seven-</div>
+                        <div class="album-year">2024</div>
+                    </div>
                 </div>
-                <div class="album-card">
-                    <div class="album-cover">アルバムカバー</div>
-                    <div class="album-title">Second EP</div>
-                    <div class="album-year">2024</div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover">アルバムカバー</div>
-                    <div class="album-title">Latest Single</div>
-                    <div class="album-year">2025</div>
+            </div>
+
+            <!-- Singles Section -->
+            <div class="discography-section">
+                <h3 class="subsection-title">Singles</h3>
+                <div class="album-grid">
+                    <div class="album-card">
+                        <img src="images/particletheory.png" alt="Particle Theory" class="album-cover-img">
+                        <div class="album-title">Particle Theory</div>
+                        <div class="album-year">2025</div>
+                    </div>
+                    <div class="album-card">
+                        <img src="images/vamp.png" alt="Vamp" class="album-cover-img">
+                        <div class="album-title">Vamp</div>
+                        <div class="album-year">2024</div>
+                    </div>
+                    <div class="album-card">
+                        <img src="images/bummed.png" alt="Bummed" class="album-cover-img">
+                        <div class="album-title">Bummed</div>
+                        <div class="album-year">2024</div>
+                    </div>
+                    <div class="album-card">
+                        <img src="images/gargantua.png" alt="Gargantua" class="album-cover-img">
+                        <div class="album-title">Gargantua</div>
+                        <div class="album-year">2024</div>
+                    </div>
+                    <div class="album-card">
+                        <img src="images/acid.png" alt="acid" class="album-cover-img">
+                        <div class="album-title">acid</div>
+                        <div class="album-year">2023</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
+ 
     <!-- メンバー -->
     <section id="members" class="section members">
         <div class="container">
             <h2 class="section-title">Members</h2>
             <div class="member-grid">
                 <div class="member-card">
-                    <div class="member-photo">写真</div>
-                    <div class="member-name">山田太郎</div>
-                    <div class="member-role">Vocal / Guitar</div>
+                    <img src="images/gaston.jpg" alt="Gaston" class="member-photo-img">
+                    <div class="member-name">Gaston</div>
+                    <div class="member-role">Vocal</div>
                 </div>
                 <div class="member-card">
-                    <div class="member-photo">写真</div>
-                    <div class="member-name">佐藤花子</div>
-                    <div class="member-role">Bass</div>
+                    <img src="images/takuma.jpg" alt="Takuma" class="member-photo-img">
+                    <div class="member-name">Takuma</div>
+                    <div class="member-role">Vocal</div>
                 </div>
                 <div class="member-card">
-                    <div class="member-photo">写真</div>
-                    <div class="member-name">田中次郎</div>
+                    <img src="images/ryotaro.jpg" alt="Ryotaro" class="member-photo-img">
+                    <div class="member-name">Ryotaro</div>
                     <div class="member-role">Drums</div>
                 </div>
                 <div class="member-card">
-                    <div class="member-photo">写真</div>
-                    <div class="member-name">鈴木美咲</div>
-                    <div class="member-role">Keyboard</div>
+                    <img src="images/shotaro.jpg" alt="Shotaro" class="member-photo-img">
+                    <div class="member-name">Shotaro</div>
+                    <div class="member-role">Guitar / Vocal</div>
+                </div>
+                <div class="member-card">
+                    <img src="images/kenta.jpg" alt="Kenta" class="member-photo-img">
+                    <div class="member-name">Kenta</div>
+                    <div class="member-role">Guitar</div>
+                </div>
+                <div class="member-card">
+                    <img src="images/taichi.jpg" alt="Taichi" class="member-photo-img">
+                    <div class="member-name">Taichi</div>
+                    <div class="member-role">Bass</div>
                 </div>
             </div>
         </div>
@@ -474,24 +633,17 @@
             <h2 class="section-title">Music Videos</h2>
             <div class="video-grid">
                 <div class="video-card">
-                    <div class="video-placeholder">YouTube動画埋め込み</div>
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/MXmnJG5trYU" title="Particle Theory [Official Visualizer]" frameborder="0" allowfullscreen></iframe>
                     <div class="video-info">
-                        <div class="video-title">新曲MV「夢への道」</div>
+                        <div class="video-title">Particle Theory [Official Visualizer]</div>
                         <p>2025年リリースの最新シングル</p>
                     </div>
                 </div>
                 <div class="video-card">
-                    <div class="video-placeholder">YouTube動画埋め込み</div>
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/_sG3caopPtA" title="acid [Live MV 2024]" frameborder="0" allowfullscreen></iframe>
                     <div class="video-info">
-                        <div class="video-title">「青春」ライブ映像</div>
-                        <p>2024年ライブツアーより</p>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-placeholder">YouTube動画埋め込み</div>
-                    <div class="video-info">
-                        <div class="video-title">「始まりの歌」MV</div>
-                        <p>デビューシングル</p>
+                        <div class="video-title">acid [Live MV 2024]</div>
+                        <p>2023年リリースシングルのライブMV</p>
                     </div>
                 </div>
             </div>
@@ -503,33 +655,27 @@
         <div class="container">
             <h2 class="section-title">Live Schedule</h2>
             <div class="live-list">
-                <div class="live-item">
-                    <div>
-                        <div class="live-date">2025.08.15</div>
-                        <div class="live-venue">渋谷O-EAST</div>
-                        <div class="live-city">東京</div>
+                <div class="live-item-with-flyer">
+                    <div class="live-info">
+                        <div class="live-date">2025.08.11 (MON)</div>
+                        <div class="live-venue">GIVEN BY THE FLAMES presents 『POST-SENSE// COLD SPARK』</div>
+                        <div class="live-city">渋谷CYCLONE</div>
+                        <div class="live-details">
+                            <span>ADV ¥3,000 / DOOR ¥4,000</span><br>
+                            <span>w/ GIVEN BY THE FLAMES, As Alliance, SHADE CARRIER, DELUSIONIST</span>
+                        </div>
+                        <div class="live-ticket">
+                            <a href="https://t.livepocket.jp/e/mzk-r" target="_blank" class="ticket-link">チケット</a>
+                        </div>
                     </div>
-                    <div>19:00 開演</div>
-                </div>
-                <div class="live-item">
-                    <div>
-                        <div class="live-date">2025.09.03</div>
-                        <div class="live-venue">大阪BIG CAT</div>
-                        <div class="live-city">大阪</div>
+                    <div class="live-flyer">
+                        <img src="images/20250811_00.jpg" alt="POST-SENSE// COLD SPARK フライヤー" class="flyer-img">
                     </div>
-                    <div>18:30 開演</div>
-                </div>
-                <div class="live-item">
-                    <div>
-                        <div class="live-date">2025.09.20</div>
-                        <div class="live-venue">名古屋BOTTOM LINE</div>
-                        <div class="live-city">愛知</div>
-                    </div>
-                    <div>19:00 開演</div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- コンタクト -->
     <section id="contact" class="section contact">
@@ -539,17 +685,17 @@
                 <p>お仕事のご依頼、ライブ出演のお問い合わせは下記までご連絡ください。</p>
                 
                 <div class="social-links">
-                    <a href="#" class="social-link">Twitter</a>
-                    <a href="#" class="social-link">Instagram</a>
-                    <a href="#" class="social-link">YouTube</a>
-                    <a href="#" class="social-link">TikTok</a>
+                    <a href="https://x.com/CalledbyMercury" target="_blank" class="social-link">Twitter</a>
+                    <a href="https://www.instagram.com/called_by_mercury/" target="_blank" class="social-link">Instagram</a>
+                    <a href="https://www.youtube.com/@CalledbyMercury" target="_blank" class="social-link">YouTube</a>
                 </div>
 
                 <p>メールでのお問い合わせ:</p>
-                <a href="mailto:info@bandname.com" class="email">info@bandname.com</a>
+                <a href="mailto:calledbymercury@gmail.com" class="email">calledbymercury@gmail.com</a>
             </div>
         </div>
     </section>
+
 
     <script>
         function showSection(sectionId) {

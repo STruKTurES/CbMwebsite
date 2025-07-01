@@ -69,6 +69,46 @@
             color: #ff6b6b;
         }
 
+        /* ハンバーガーメニュー用 */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 2rem;
+                padding-top: 2rem;
+                transition: left 0.3s;
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .nav-toggle {
+                display: flex;
+            }
+            .logo-img {
+                height: 30px;
+                max-width: 150px;
+            }
+        }
+
         /* セクション共通スタイル */
         .section {
             min-height: 100vh;
@@ -496,7 +536,15 @@
             <div class="logo">
                 <img src="images/CbMLogo_white_400p.png" alt="Called by Mercury" class="logo-img">
             </div>
-            <ul class="nav-menu">
+            
+            <!-- ハンバーガーメニューボタン追加 -->
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#" class="nav-link" onclick="showSection('home')">HOME</a></li>
                 <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('about')">ABOUT</a></li>
                 <li><a href="#" class="nav-link" onclick="showSection('discography')">DISCOGRAPHY</a></li>
@@ -507,6 +555,8 @@
             </ul>
         </div>
     </nav>
+
+    
 
     <!-- ホームセクション -->
     <section id="home" class="section hero active">
@@ -695,6 +745,7 @@
             </div>
         </div>
     </section>
+        
 
 
     <script>
@@ -722,6 +773,18 @@
                 event.target.style.color = '#ff6b6b';
             }
         }
+
+        // ハンバーガーメニュー用の関数を追加
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // YouTube動画埋め込み用の関数（実際のYouTube IDを設定してください）
+        function embedYouTubeVideo(videoId, containerId) {
+            // 既存のコード...
+        }
+
 
         // YouTube動画埋め込み用の関数（実際のYouTube IDを設定してください）
         function embedYouTubeVideo(videoId, containerId) {

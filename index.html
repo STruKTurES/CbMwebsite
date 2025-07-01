@@ -508,10 +508,48 @@
 
         /* レスポンシブ */
         @media (max-width: 768px) {
+            /* 全体の横幅制御 */
+            body {
+                overflow-x: hidden;
+            }
+            
+            * {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            /* ホーム画面 */
+            .hero {
+                padding: 0 1rem;
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            .hero-content {
+                width: 100%;
+                max-width: 100%;
+                padding: 0 1rem;
+                box-sizing: border-box;
+            }
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
 
+            .hero-logo {
+                max-width: 280px;
+                width: 85%;
+                height: auto;
+                margin-bottom: 1rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                word-wrap: break-word;
+            }
+
+            /* その他のページ */
             .about-content {
                 grid-template-columns: 1fr;
             }

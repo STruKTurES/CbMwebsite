@@ -89,3 +89,21 @@ document.addEventListener('keydown', function(event) {
         closeTicketModal();
     }
 });
+
+// ロゴ回転機能
+function spinLogo() {
+    const logo = document.querySelector('.logo-img');
+    
+    // 既に回転中の場合は何もしない
+    if (logo.classList.contains('spinning')) {
+        return;
+    }
+    
+    // 回転クラスを追加
+    logo.classList.add('spinning');
+    
+    // アニメーション終了後にクラスを削除
+    setTimeout(() => {
+        logo.classList.remove('spinning');
+    }, 600);
+}

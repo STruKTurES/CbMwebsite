@@ -57,3 +57,39 @@ function embedYouTubeVideo(videoId, containerId) {
 
 // 使用例（実際のYouTube動画IDに置き換えてください）
 // embedYouTubeVideo('your-video-id-1', 'video-container-1');
+
+// チケットモーダル制御関数
+function openTicketModal(eventId, livepocketUrl = null) {
+    const modal = document.getElementById('ticket-modal');
+    const livepocketSection = document.getElementById('livepocket-section');
+    const livepocketLink = document.getElementById('livepocket-link');
+    
+    // Livepocketリンクがある場合のみセクションを表示
+    if (livepocketUrl) {
+        livepocketSection.style.display = 'block';
+        livepocketLink.href = livepocketUrl;
+    } else {
+        livepocketSection.style.display = 'none';
+    }
+    
+    modal.style.display = 'block';
+    
+    // 背景クリックでモーダルを閉じる
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            closeTicketModal();
+        }
+    }
+}
+
+function closeTicketModal() {
+    const modal = document.getElementById('ticket-modal');
+    modal.style.display = 'none';
+}
+
+// ESCキーでモーダルを閉じる
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeTicketModal();
+    }
+});

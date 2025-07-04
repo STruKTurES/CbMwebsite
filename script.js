@@ -120,3 +120,12 @@ function spinLogo() {
         logo.classList.remove('spinning');
     }, 800);
 }
+
+// ページ読み込み時の初期化
+document.addEventListener('DOMContentLoaded', function() {
+    // HOMEナビゲーションをアクティブにする
+    const homeLink = document.querySelector('[onclick="showSection(\'home\')"]');
+    if (homeLink) {
+        homeLink.style.color = '#ff6b6b';
+    }
+});

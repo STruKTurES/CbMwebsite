@@ -28,7 +28,7 @@ function showSection(sectionId) {
     
     const clickedLink = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
     if (clickedLink){
-        event.target.style.color = '#ff6b6b';
+        event.target.style.color = '#ff0040';
     }
 }
 
@@ -126,6 +126,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // HOMEナビゲーションをアクティブにする
     const homeLink = document.querySelector('[onclick="showSection(\'home\')"]');
     if (homeLink) {
-        homeLink.style.color = '#ff6b6b';
+        homeLink.style.color = '#ff0040';
     }
 });
+
+// メールアドレスをコピーする関数
+function copyEmail() {
+    const emailText = document.getElementById('email-address').textContent;
+    const copyButton = document.querySelector('.copy-button');
+    
+    // クリップボードにコピー
+    navigator.clipboard.writeText(emailText).then(function() {
+        // 成功時のフィードバック
+        const originalText = copyButton.textContent;
+        copyButton.textContent = 'コピー完了!';
+        copyButton.style.background = '#4CAF50';
+        
+        setTimeout(function() {
+            copyButton.textContent = originalText;
+            copyButton.style.background = '#ff0040';
+        }, 2000);
+    }).catch(function(error) {
+        // エラー時のフィードバック
+        console.error('コピーに失敗しました:', error);
+        const originalText = copyButton.textContent;
+        copyButton.textContent = 'コピー失敗';
+        copyButton.style.background = '#ff4444';
+        
+        setTimeout(function() {
+            copyButton.textContent = originalText;
+            copyButton.style.background = '#ff0040';
+        }, 2000);
+    });
+}

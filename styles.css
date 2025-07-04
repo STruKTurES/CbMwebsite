@@ -74,7 +74,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #ff6b6b;
+    color: #ff0040;
 }
 
 /* ハンバーガーメニュー用 */
@@ -166,7 +166,7 @@ body {
 
 #construction-notice p {
     font-family: 'Georgia', serif;
-    color: #cc5555;
+    color: #0066ff;
     font-size: 1.1rem;
 }
 
@@ -204,7 +204,7 @@ body {
 }
 
 .cta-button {
-    background: #ff6b6b;
+    background: #ff0040;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -217,7 +217,7 @@ body {
 }
 
 .cta-button:hover {
-    background: #ff5252;
+    background: #cc0035;
     transform: translateY(-2px);
 }
 
@@ -307,7 +307,7 @@ body {
 
 .subsection-title {
     font-size: 1.8rem;
-    color: #ff6b6b;
+    color: #ff0040;
     text-align: center;
     margin-bottom: 2rem;
     text-transform: uppercase;
@@ -358,7 +358,7 @@ body {
 }
 
 .member-role {
-    color: #ff6b6b;
+    color: #ff0040;
     font-weight: bold;
 }
 
@@ -485,7 +485,7 @@ body {
 .live-date {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ff6b6b;
+    color: #ff0040;
 }
 
 .live-venue {
@@ -504,7 +504,7 @@ body {
 }
 
 .ticket-link {
-    background: #ff6b6b;
+    background: #ff0040;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -514,7 +514,7 @@ body {
 }
 
 .ticket-link:hover {
-    background: #ff5252;
+    background: #cc0035;
 }
 
 .live-venue {
@@ -549,12 +549,12 @@ body {
 }
 
 .social-link:hover {
-    color: #ff6b6b;
+    color: #ff0040;
 }
 
 .email {
     font-size: 1.2rem;
-    color: #ff6b6b;
+    color: #ff0040;
     text-decoration: none;
 }
 
@@ -594,12 +594,12 @@ body {
 }
 
 .close-button:hover {
-    color: #ff6b6b;
+    color: #ff0040;
 }
 
 .modal-content h3 {
     margin-bottom: 1rem;
-    color: #ff6b6b;
+    color: #ff0040;
 }
 
 .modal-content p {
@@ -615,7 +615,7 @@ body {
 }
 
 .modal-link {
-    background: #ff6b6b;
+    background: #ff0040;
     color: white;
     padding: 12px 24px;
     border-radius: 25px;
@@ -625,7 +625,7 @@ body {
 }
 
 .modal-link:hover {
-    background: #ff5252;
+    background: #cc0035;
     transform: translateY(-2px);
 }
 
@@ -641,7 +641,7 @@ body {
 
 .modal-content h4 {
     margin-bottom: 0.5rem;
-    color: #ff6b6b;
+    color: #ff0040;
     font-size: 1.1rem;
 }
 
@@ -651,6 +651,56 @@ body {
 
 .livepocket-link:hover {
     background: #45a049;
+}
+
+/* メールアドレスセクション */
+.email-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+}
+
+.email-section p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.email-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2a2a2a;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #444;
+}
+
+.email-text {
+    flex: 1;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #fff;
+    user-select: all;
+}
+
+.copy-button {
+    background: #ff0040;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.2s ease;
+}
+
+.copy-button:hover {
+    background: #cc0035;
+}
+
+.copy-button:active {
+    transform: scale(0.95);
 }
 
 /* レスポンシブ */

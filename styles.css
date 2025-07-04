@@ -262,6 +262,12 @@ body {
     gap: 2rem;
 }
 
+.album-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .album-card {
     background: #2a2a2a;
     border-radius: 10px;

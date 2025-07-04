@@ -240,6 +240,14 @@ body {
     line-height: 1.8;
 }
 
+.about-text-en {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #aaa;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
 .about-image {
     text-align: center;
 }

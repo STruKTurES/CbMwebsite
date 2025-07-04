@@ -11,12 +11,8 @@ function showSection(sectionId) {
         targetSection.classList.add('active');
     }
 
-    // ホーム画面の時はbodyのスクロールを無効、他は有効
-    if (sectionId === 'home') {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    // スクロールは常に有効
+    document.body.style.overflow = 'auto';
 
     // ハンバーガーメニューを閉じる
     const navMenu = document.getElementById('nav-menu');

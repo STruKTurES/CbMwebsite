@@ -662,8 +662,6 @@ body {
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        height: 100vh;
-        overflow-y: hidden;
     }
 
     .hero-content {

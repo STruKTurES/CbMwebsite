@@ -93,10 +93,19 @@ document.addEventListener('keydown', function(event) {
 // ロゴ回転機能
 function spinLogo() {
     const logo = document.querySelector('.logo-img');
+    const audio = document.getElementById('spin-sound');
     
     // 既に回転中の場合は何もしない
     if (logo.classList.contains('spinning')) {
         return;
+    }
+    
+    // 音声を再生
+    if (audio) {
+        audio.currentTime = 0; // 最初から再生
+        audio.play().catch(error => {
+            console.log('音声再生に失敗:', error);
+        });
     }
     
     // 回転クラスを追加
@@ -105,5 +114,5 @@ function spinLogo() {
     // アニメーション終了後にクラスを削除
     setTimeout(() => {
         logo.classList.remove('spinning');
-    }, 600);
+    }, 800);
 }

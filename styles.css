@@ -326,12 +326,12 @@ body {
 .member-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .member-card {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .member-photo {
@@ -356,11 +356,18 @@ body {
     font-weight: bold;
 }
 
+.member-caption {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
 .member-photo-img{
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 0;
     margin: 0 auto 1rem;
     display: block;
 }
@@ -748,5 +755,10 @@ body {
 
     .member-role {
         font-size: 0.9rem;
+    }
+
+    .member-caption {
+        font-size: 0.8rem;
+        margin-top: 0.4rem;
     }
 }

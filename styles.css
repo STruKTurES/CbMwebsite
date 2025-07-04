@@ -144,6 +144,11 @@ body {
     min-height: 100vh;
 }
 
+/*工事中メッセージ用*/
+#construction-notice p {
+    font-family: 'Georgia', serif;
+}
+
 .hero-content {
     display: flex;
     flex-direction: column;

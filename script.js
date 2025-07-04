@@ -102,10 +102,16 @@ function spinLogo() {
     
     // 音声を再生
     if (audio) {
-        audio.currentTime = 0; // 最初から再生
-        audio.play().catch(error => {
-            console.log('音声再生に失敗:', error);
-        });
+        // 現在の再生を停止してリセット
+        audio.pause();
+        audio.currentTime = 0;
+        
+        // 少し遅延を入れてから再生
+        setTimeout(() => {
+            audio.play().catch(error => {
+                console.log('音声再生に失敗:', error);
+            });
+        }, 10);
     }
     
     // 回転クラスを追加

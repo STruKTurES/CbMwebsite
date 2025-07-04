@@ -146,7 +146,7 @@ body {
 
 /*工事中メッセージ用*/
 #construction-notice p {
-    font-family: 'Georgia', serif;
+    font-family: 'Arial', bold;
 }
 
 .hero-content {

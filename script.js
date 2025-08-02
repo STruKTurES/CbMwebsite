@@ -55,15 +55,25 @@ function embedYouTubeVideo(videoId, containerId) {
 // embedYouTubeVideo('your-video-id-1', 'video-container-1');
 
 // チケットモーダル制御関数
-function openTicketModal(eventId, livepocketUrl = null) {
+function openTicketModal(eventId, ticketUrl = null) {
     const modal = document.getElementById('ticket-modal');
     const livepocketSection = document.getElementById('livepocket-section');
     const livepocketLink = document.getElementById('livepocket-link');
+    const ticketSiteName = document.getElementById('ticket-site-name');
     
-    // Livepocketリンクがある場合のみセクションを表示
-    if (livepocketUrl) {
+    // 外部チケットサイトリンクがある場合のみセクションを表示
+    if (ticketUrl) {
         livepocketSection.style.display = 'block';
-        livepocketLink.href = livepocketUrl;
+        livepocketLink.href = ticketUrl;
+        
+        // URLに基づいてサイト名を設定
+        if (ticketUrl.includes('tiget.net')) {
+            ticketSiteName.textContent = 'tiget';
+        } else if (ticketUrl.includes('livepocket.jp')) {
+            ticketSiteName.textContent = 'Livepocket';
+        } else {
+            ticketSiteName.textContent = 'チケット購入';
+        }
     } else {
         livepocketSection.style.display = 'none';
     }

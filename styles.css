@@ -581,7 +581,7 @@ body {
 
 .modal-content {
     background-color: #2a2a2a;
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 2rem;
     border-radius: 10px;
     width: 90%;
@@ -589,6 +589,14 @@ body {
     text-align: center;
     color: #fff;
     position: relative;
+}
+
+/* チケット取り置きヒントモーダル専用のスタイル */
+#ticket-hint-modal .modal-content {
+    width: 80%;
+    max-width: 800px;
+    margin: 5% auto;
+    padding: 2.5rem;
 }
 
 .close-button {
@@ -712,6 +720,132 @@ body {
     transform: scale(0.95);
 }
 
+/* チケット取り置きヒント */
+.ticket-hint-container {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+}
+
+.ticket-hint-button {
+    background: linear-gradient(45deg, #ff0040, #ff4080);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(255, 0, 64, 0.3);
+}
+
+.ticket-hint-button:hover {
+    background: linear-gradient(45deg, #cc0035, #ff3366);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 64, 0.4);
+}
+
+.ticket-hint-button:active {
+    transform: translateY(0);
+}
+
+/* チケット取り置きヒントモーダルの内容 */
+.ticket-hint-content {
+    text-align: left;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.ticket-hint-content h4 {
+    color: #ff0040;
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ticket-hint-content h4:first-child {
+    margin-top: 1rem;
+}
+
+.ticket-hint-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.ticket-hint-content ul,
+.ticket-hint-content ol {
+    margin: 0.5rem 0 1rem 1.2rem;
+    color: #ddd;
+}
+
+.ticket-hint-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.ticket-hint-content strong {
+    color: #ff4080;
+}
+
+.hint-social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: flex-start;
+}
+
+.hint-social-link {
+    background: #ff0040;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.hint-social-link:hover {
+    background: #cc0035;
+    transform: translateY(-1px);
+}
+
+.divider-line {
+    border-top: 1px solid #555;
+    margin: 1.5rem 0;
+}
+
+.venue-instruction {
+    background: #333;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 4px solid #ff0040;
+    font-style: italic;
+    color: #fff;
+    margin: 0.5rem 0;
+}
+
+.contact-note {
+    font-size: 0.9rem;
+    color: #bbb;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.closing-note {
+    text-align: center;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 0;
+}
+
 /* レスポンシブ */
 @media (max-width: 768px) {
     .section {
@@ -825,5 +959,18 @@ body {
     .member-caption {
         font-size: 0.8rem;
         margin-top: 0.4rem;
+    }
+    
+    /* モバイル版でのモーダル調整 */
+    #ticket-hint-modal .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .ticket-hint-content {
+        max-height: none;
     }
 }

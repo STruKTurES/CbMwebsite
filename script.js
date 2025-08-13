@@ -93,10 +93,29 @@ function closeTicketModal() {
     modal.style.display = 'none';
 }
 
+// チケット取り置きヒントモーダル制御関数
+function openTicketHintModal() {
+    const modal = document.getElementById('ticket-hint-modal');
+    modal.style.display = 'block';
+    
+    // 背景クリックでモーダルを閉じる
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            closeTicketHintModal();
+        }
+    }
+}
+
+function closeTicketHintModal() {
+    const modal = document.getElementById('ticket-hint-modal');
+    modal.style.display = 'none';
+}
+
 // ESCキーでモーダルを閉じる
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeTicketModal();
+        closeTicketHintModal();
     }
 });
 

@@ -286,6 +286,13 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- チケット取り置きヒント -->
+            <div class="ticket-hint-container">
+                <button class="ticket-hint-button" onclick="openTicketHintModal()">
+                    チケット取り置きとは？
+                </button>
+            </div>
         </div>
     </section>
     
@@ -345,6 +352,70 @@
                     <span id="email-address" class="email-text">calledbymercury@gmail.com</span>
                     <button class="copy-button" onclick="copyEmail()">コピー</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- チケット取り置きヒントモーダル -->
+    <div id="ticket-hint-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeTicketHintModal()">&times;</span>
+            <h3>チケット取り置きとは？</h3>
+            <div class="ticket-hint-content">
+                <p>「取り置き」とは、ライブチケットをご来場予定のお客様のためにバンドが事前にお取り置きする仕組みです。一般的なチケット販売サービス（例：e+、ぴあ 等）を通さず、バンドを通じて直接ご予約いただく方法となります。</p>
+                
+                <div class="divider-line"></div>
+                
+                <h4>取り置きの流れ</h4>
+                <ol>
+                    <li>ご来場を希望されるお客様が、バンドにご連絡</li>
+                    <li>バンドがご希望情報を取りまとめ</li>
+                    <li>バンドよりライブハウスへ情報を共有</li>
+                    <li>当日、受付にてお名前をお申し出いただき、料金をお支払の上でご入場</li>
+                </ol>
+                
+                <div class="divider-line"></div>
+                
+                <h4>お客様にご対応いただく内容</h4>
+                <p>ご希望の公演にお越しになる場合は、以下の情報を事前にバンドへご連絡ください：</p>
+                <ul>
+                    <li>ご希望のライブ日程</li>
+                    <li>取り置き名（本名でなくても問題ございません）</li>
+                    <li>枚数（複数名でご来場の場合）</li>
+                </ul>
+                
+                <p><strong>当日、ライブ会場の受付にて</strong></p>
+                <p class="venue-instruction">「〇〇（バンド名）で取り置きの〇〇（ご自身の取り置き名）です」</p>
+                <p>とお伝えください。ご確認のうえ、ご予約時の料金でご入場いただけます。</p>
+                
+                <div class="divider-line"></div>
+                
+                <h4>取り置きによるご優待</h4>
+                <p>多くの場合、当日券よりも<strong>500円程度お得な料金</strong>でご入場いただけます。事前にご予約いただくことで、スムーズかつお得にライブをお楽しみいただけます。</p>
+                
+                <div class="divider-line"></div>
+                
+                <h4>ご連絡方法</h4>
+                <p>Called by Mercuryでは、以下の方法にて取り置きのご連絡を受け付けております：</p>
+                <ul>
+                    <li><strong>X（旧Twitter）</strong>：ダイレクトメッセージにてご連絡ください</li>
+                    <li><strong>Instagram</strong>：ダイレクトメッセージにてご連絡ください</li>
+                    <li><strong>メールアドレス</strong>：公開しているアドレス宛にご連絡ください</li>
+                </ul>
+                <p class="contact-note">（その他のお問い合わせもお気軽にどうぞ）</p>
+                
+                <div class="hint-social-links">
+                    <a href="https://x.com/CalledbyMercury" target="_blank" class="hint-social-link">
+                        <span>X (Twitter)</span>
+                    </a>
+                    <a href="https://www.instagram.com/called_by_mercury/" target="_blank" class="hint-social-link">
+                        <span>Instagram</span>
+                    </a>
+                </div>
+                
+                <div class="divider-line"></div>
+                
+                <p class="closing-note">ご不明な点がございましたら、お気軽にお問い合わせください。</p>
             </div>
         </div>
     </div>

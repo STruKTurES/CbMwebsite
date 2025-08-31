@@ -28,7 +28,7 @@ function showSection(sectionId) {
     
     const clickedLink = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
     if (clickedLink){
-        event.target.style.color = '#ff0040';
+        clickedLink.style.color = '#ff0040';
     }
 }
 

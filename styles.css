@@ -11,6 +11,14 @@ body {
     background: #000;
 }
 
+* {
+    cursor: url('./images/Gunfinger1.png') 4 4, auto !important;
+}
+
+*:active {
+    cursor: url('./images/Gunfinger2.png') 4 4, auto !important;
+}
+
 /* ナビゲーション */
 .navbar {
     position: fixed;
